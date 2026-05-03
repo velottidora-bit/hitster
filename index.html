@@ -197,9 +197,13 @@ function renderCards() {
 
     wrap.innerHTML = `
       <div class="card-inner">
-        <div class="card-face card-front">
+        <div class="card-face card-front" id="front-face">
           <div class="icon">🎵</div>
           <div class="brand">HITSTER</div>
+          <div class="qr-wrap" id="qr-${i}">
+            <div class="qr-box" id="qrbox-${i}"></div>
+            <div class="qr-label" style="color:#E94560">▶ SPOTIFY</div>
+          </div>
           <div class="hint">TOCCA PER GIRARE</div>
         </div>
         <div class="card-face card-back" style="background:${c.bg};border:3px solid ${c.accent}">
@@ -208,10 +212,7 @@ function renderCards() {
           <div class="title" style="color:${c.text}">"${card.title}"</div>
           <div class="artist" style="color:${c.text}">${card.artist}</div>
           ${card.genre ? `<div class="genre-tag" style="color:${c.text};border:1px solid ${c.text}55">${card.genre}</div>` : ""}
-          <div class="qr-wrap" id="qr-${i}">
-            <div class="qr-box" id="qrbox-${i}"></div>
-            <div class="qr-label" style="color:${c.text}">▶ SPOTIFY</div>
-          </div>
+
         </div>
       </div>`;
 
